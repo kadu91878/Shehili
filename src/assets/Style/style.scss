@@ -46,7 +46,7 @@ html {
     height: 10%;
     top: 0;
     left: 0;
-    position: fixed;
+    position: sticky;
     background: $clr-background;
     box-shadow: $box-shadow;
     display: flex;
@@ -56,7 +56,7 @@ html {
     padding: 10px 30px;
     z-index: 1000;
     transition: all 0.5s ease;
-
+    border: 3px solid $clr-backgroud-variant;
     .head-title {
         font-size: 34px;
         color: $clr-primary;
@@ -86,7 +86,7 @@ html {
                 font-style: $font-logo;
 
                 &:hover {
-                    color: $clr-dark-variant;
+                    color: $clr-primary;
                 }
             }
         }
@@ -116,7 +116,7 @@ html {
                 // color: blue($color: #000000);
             }
 
-            p{
+            p {
                 margin-left: 5px;
             }
 
@@ -127,7 +127,7 @@ html {
             }
         }
 
-        .cart-box{
+        .cart-box {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,8 +135,7 @@ html {
             font-weight: 600;
             text-transform: capitalize;
 
-            .cart{
-
+            .cart {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -144,16 +143,14 @@ html {
                 font-weight: 600;
                 text-transform: capitalize;
 
-                svg{
+                svg {
                     margin-left: 5px;
                 }
-    
-                p{
+
+                p {
                     margin-left: 5px;
                 }
             }
-            
-           
         }
     }
 
@@ -177,6 +174,115 @@ html {
             line-height: 30px;
             color: $clr-primary;
             cursor: pointer;
+        }
+    }
+}
+
+// ============ Home Page
+
+.home-page {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $clr-primary;
+    position: relative;
+    background-image: url("../images/annie-spratt-VDXtVYJVj7A-unsplash.jpg");
+    background-blend-mode: multiply;
+
+    .banner-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        .head-title {
+            padding-top: 100px;
+            font-size: 60px;
+            color: $clr-primary;
+            text-transform: capitalize;
+            font-style: $font-logo;
+            font-weight: 700;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .sub-title {
+            font-size: 30px;
+            color: $clr-primary;
+            text-transform: capitalize;
+            font-style: $font-head-title;
+            font-weight: 700;
+        }
+
+        .banner {
+            padding-top: 200px;
+            padding-bottom: 100px;
+
+            .banner-links {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 70px;
+
+                .circle-link {
+                    width: 200px;
+                    height: 200px;
+                    font-size: 18px;
+                    color: $clr-primary;
+                    font-weight: 700;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 3px solid $clr-backgroud-variant;
+                    background: $clr-background;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    a {
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        font-size: 18px;
+                        border-radius: 50%;
+                        background-color: $clr-background;
+                        font-weight: 700;
+                        color: $clr-background;
+                        text-transform: capitalize;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        display: flex;
+                        opacity: 0;
+                        transition: all 300ms ease;
+                        color: $clr-primary;
+                    }
+
+                    &:hover {
+                        border: 1px solid $clr-primary;
+
+                        .circle-link {
+                            opacity: 0;
+                        }
+
+                        a {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
         }
     }
 }
