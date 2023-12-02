@@ -35,26 +35,50 @@
 import { ref } from "vue";
 
 const instagramImages = ref<string[]>([
- "src/assets/Instagram/instaimg(1).jpeg",
- "src/assets/Instagram/instaimg(2).jpeg",
- "src/assets/Instagram/instaimg(3).jpeg",
- "src/assets/Instagram/instaimg(4).jpeg",
- "src/assets/Instagram/instaimg(5).jpeg",
+  "src/assets/Instagram/instaimg(1).jpeg",
+  "src/assets/Instagram/instaimg(2).jpeg",
+  "src/assets/Instagram/instaimg(3).jpeg",
+  "src/assets/Instagram/instaimg(4).jpeg",
+  "src/assets/Instagram/instaimg(5).jpeg",
 ]);
 
-const displayedImages = ref<string[]>(instagramImages.value.slice(0, 3));
+let initialIndex = 0;
+
+function getDisplayedImages(): string[] {
+  const displayed: string[] = [];
+  for (let i = 0; i < 3; i++) {
+    const index = (initialIndex + i) % instagramImages.value.length;
+    displayed.push(instagramImages.value[index]);
+  }
+  return displayed;
+}
+
+const displayedImages = ref<string[]>(getDisplayedImages());
 
 function previous() {
- if (displayedImages.value.length > 1) {
- const firstImage = displayedImages.value.shift() as string;
- displayedImages.value.push(firstImage);
- }
+  initialIndex = (initialIndex - 1 + instagramImages.value.length) % instagramImages.value.length;
+  displayedImages.value = getDisplayedImages();
+  updateImageTransition('slide-prev');
 }
 
 function next() {
- if (displayedImages.value.length > 1) {
- const lastImage = displayedImages.value.pop() as string;
- displayedImages.value.unshift(lastImage);
- }
+  initialIndex = (initialIndex + 1) % instagramImages.value.length;
+  displayedImages.value = getDisplayedImages();
+  updateImageTransition('slide-next');
+}
+
+function updateImageTransition(className: string) {
+  const images = document.querySelectorAll('.insta-image');
+  images.forEach((image, index) => {
+    if (index === 0) {
+      image.classList.add(className);
+      setTimeout(() => {
+        image.classList.remove(className);
+        image.classList.add('active');
+      }, 200);
+    } else {
+      image.classList.remove('active', 'slide-prev', 'slide-next');
+    }
+  });
 }
 </script>
