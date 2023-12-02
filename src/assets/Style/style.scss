@@ -471,59 +471,32 @@ html {
         justify-content: center;
         flex-direction: row;
 
-        .instagram-caroussel {
-            width: 100%;
-            padding-top: 200px;
-            padding-bottom: 200px;
+        .row {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: $clr-dark-variant;
+            flex-wrap: wrap;
+            margin-left: 15px;
+            margin-right: -15px;
+            padding:
+                200px,
+                0 200px 0;
 
-            .insta-image {
-                width: 400px;
-                height: 400px;
-                font-size: 18px;
-                // color: $clr-primary;
-                font-weight: 700;
-                border-radius: 25px;
-                overflow: hidden;
-                border: 3px solid $clr-backgroud-variant;
-                // background: $clr-background;
+            .instagram-caroussel {
+                width: 100%;
+                padding-top: 200px;
+                padding-bottom: 200px;
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
                 align-items: center;
-                position: relative;
+                justify-content: center;
+                flex-direction: row;
+                background-color: $clr-dark-variant;
+                gap: 20px;
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                .buttons {
-                    position: absolute;
-                    width: 200px;
-                    height: 200px;
-                    font-size: 18px;
-                    // border-radius: 50%;
-                    font-weight: 700;
-                    text-transform: capitalize;
-                    justify-content: space-around;
-                    align-items: center;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    display: flex;
-                    // opacity: 0;
+                .arrows {
+                    z-index: 3;
+                    opacity: 0;
                     transition: all 300ms ease;
-                    transform: translateY(120%);
-                    color: $clr-primary;
-                    border: hidden;
-
                     .arrow-left {
-                        transform: translate(-6.1rem, -15ex);
+                        transform: translate(5rem, 2ex);
 
                         button {
                             width: 50px;
@@ -535,7 +508,7 @@ html {
                     }
 
                     .arrow-right {
-                        transform: translate(6.1rem, -15ex);
+                        transform: translate(77.5rem, -6ex);
 
                         button {
                             width: 50px;
@@ -546,15 +519,104 @@ html {
                         }
                     }
 
-                    .insta-button {
-                        transform: translate(0, -15ex);
+                    &:hover {
+                        opacity: 1;
+
                         button {
-                            width: 50px;
-                            height: 50px;
-                            // border-radius: 50%;
-                            color: black;
-                            border: hidden;
+                            background-color: black;
+
+                            svg {
+                                color: white;
+                            }
                         }
+                    }
+                }
+
+                .insta-image {
+                    width: 400px;
+                    height: 400px;
+                    font-size: 18px;
+                    // color: $clr-primary;
+                    font-weight: 700;
+                    border-radius: 25px;
+                    overflow: hidden;
+                    border: 3px solid $clr-backgroud-variant;
+                    // background: $clr-background;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .buttons {
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        font-size: 18px;
+                        // border-radius: 50%;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        justify-content: space-around;
+                        align-items: center;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        display: flex;
+                        // opacity: 0;
+                        transition: all 300ms ease;
+                        transform: translateY(120%);
+                        color: $clr-primary;
+                        border: hidden;
+
+                        .insta-button {
+                            transform: translate(0, -15ex);
+                            opacity: 0;
+                            button {
+                                width: 50px;
+                                height: 50px;
+                                // border-radius: 50%;
+                                color: black;
+                                border: hidden;
+                                background-color: transparent;
+
+                                svg {
+                                    width: 60px;
+                                    height: 60px;
+                                    color: white;
+                                    size: 20px;
+                                    background-color: none;
+                                }
+                            }
+
+                            &:hover {
+                                opacity: 1;
+
+                                button {
+                                    svg {
+                                        color: black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .buttons {
+                            .insta-button {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .arrows {
+                        opacity: 1;
                     }
                 }
             }
