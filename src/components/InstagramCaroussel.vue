@@ -46,7 +46,7 @@ let initialIndex = 0;
 
 function getDisplayedImages(): string[] {
   const displayed: string[] = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < instagramImages.value.length; i++) {
     const index = (initialIndex + i) % instagramImages.value.length;
     displayed.push(instagramImages.value[index]);
   }
@@ -55,13 +55,13 @@ function getDisplayedImages(): string[] {
 
 const displayedImages = ref<string[]>(getDisplayedImages());
 
-function previous() {
+function next() {
   initialIndex = (initialIndex - 1 + instagramImages.value.length) % instagramImages.value.length;
   displayedImages.value = getDisplayedImages();
   updateImageTransition('slide-prev');
 }
 
-function next() {
+function previous() {
   initialIndex = (initialIndex + 1) % instagramImages.value.length;
   displayedImages.value = getDisplayedImages();
   updateImageTransition('slide-next');
@@ -70,12 +70,12 @@ function next() {
 function updateImageTransition(className: string) {
   const images = document.querySelectorAll('.insta-image');
   images.forEach((image, index) => {
-    if (index === 0) {
+    if (index ===  index) {
       image.classList.add(className);
       setTimeout(() => {
         image.classList.remove(className);
         image.classList.add('active');
-      }, 200);
+      }, 500);
     } else {
       image.classList.remove('active', 'slide-prev', 'slide-next');
     }
