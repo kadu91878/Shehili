@@ -13,7 +13,7 @@ library.add(far);
 import { dom } from "@fortawesome/fontawesome-svg-core";
 dom.watch();
 
-
+import { create, NConfigProvider } from 'naive-ui'
 
 
 import App from './App.vue'
@@ -21,12 +21,17 @@ import router from './router'
 
 
 // library.add(faUserSecret)
+const naive = create()
 
 const app = createApp(App)
+
 .component('font-awesome-icon', FontAwesomeIcon)
 
 app.use(createPinia())
 app.use(router)
+
+app.use(naive)
+app.component('NConfigProvider', NConfigProvider)
 
 
 app.mount('#app')

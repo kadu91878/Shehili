@@ -1,5 +1,5 @@
 <template>
-  <div class="instagram-caroussel" id="caroussel">
+  <div class="instagram" id="caroussel">
     <div class="head-title">
       <span>#Instagram</span>
     </div>
@@ -8,7 +8,7 @@
     </div>
     <div class="instagram-container">
       <div class="row">
-        <div class="instagram-caroussel">
+        <div class="instagram-carousel">
           <div class="arrows">
             <div class="arrow-left">
               <button @click="previous()"><i class="fa-solid fa-chevron-left"></i></button>

@@ -1,7 +1,6 @@
 // ============= Import Google Fnts
 @import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Infant:wght@300;400;500;600;700&family=Hind:wght@300;400;500;600;700&display=swap");
 
-
 // ============= Global Style
 * {
     padding: 0;
@@ -439,10 +438,10 @@ html {
 
 // ============= Instagram
 
-.instagram-caroussel {
+.instagram {
     width: 100%;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    // padding-top: 200px;
+    // padding-bottom: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -458,6 +457,7 @@ html {
         font-family: $font-head-title;
         font-weight: 700;
         padding-bottom: 30px;
+        padding-top: 30px;
     }
 
     .sub-title {
@@ -472,7 +472,8 @@ html {
         align-items: center;
         justify-content: center;
         flex-direction: row;
-       
+        padding-top: 150px;
+        padding-bottom: 150px;
 
         .row {
             display: flex;
@@ -482,9 +483,12 @@ html {
             padding:
                 200px,
                 0 200px 0;
+            overflow: hidden;
 
-            .instagram-caroussel {
+            .instagram-carousel {
                 width: 100%;
+                // margin-left: 10%;
+                // margin-right: 10%;
                 // padding-top: 200px;
                 // padding-bottom: 200px;
                 display: flex;
@@ -492,19 +496,15 @@ html {
                 justify-content: center;
                 flex-direction: row;
                 background-color: $clr-dark-variant;
-                gap: 30px;
-
-               
-                
-                
-               
+                gap: 100px;
+                overflow: hidden;
 
                 .arrows {
                     z-index: 3;
                     opacity: 0;
                     transition: all 300ms ease;
                     .arrow-left {
-                        transform: translate(5rem, 2ex);
+                        transform: translate(12rem, 2ex);
 
                         button {
                             width: 50px;
@@ -516,7 +516,7 @@ html {
                     }
 
                     .arrow-right {
-                        transform: translate(77.5rem, -6ex);
+                        transform: translate(134.5rem, -6ex);
 
                         button {
                             width: 50px;
@@ -561,15 +561,14 @@ html {
                     outline: 0 !important;
                     box-sizing: border-box;
                     position: relative;
-                    
 
-                    &::after{
+                    &::after {
                         content: "";
                         clear: both;
                         display: table;
                     }
 
-                    &::before{
+                    &::before {
                         content: "";
                         display: table;
                     }
@@ -645,32 +644,16 @@ html {
                 }
 
                 .slide-prev {
-                    // transform: perspective(1000px) rotateY(180deg);
-                    // transition: transform 1s ease 0s;
-                    // transform: translate3d(-1275px, 0px, 0px);
-                    transition: transform 500ms ease-in-out 0s;
-                    transform: translate3d(-100%, 0px, 0px);
+                    transform: perspective(1000px) rotateY(45deg);
+                    transition: transform 500ms ease;
                     opacity: 0.5;
-                    
-                    
-                    // animation-delay: 0.5s;
                 }
 
                 .slide-next {
-                    // transform: perspective(1000px) rotateY(180deg);
-                    // transform: translateX(100%);
-                    // transform: translate3d(-1rem 0 0);
-                    transition: transform 500ms ease-in-out 0s;
-                    transform: translate3d(100%, 0px, 0px);
+                    transform: perspective(1000px) rotateY(45deg);
+                    transition: transform 500ms ease;
                     opacity: 0.5;
-                    // transition: transform 1s forwards;
-                    // animation-delay: 1s;
                 }
-
-                // .active {
-                //     // transform: translateX(0);
-                //     // opacity: 1;
-                //   }
 
                 &:hover {
                     .arrows {
