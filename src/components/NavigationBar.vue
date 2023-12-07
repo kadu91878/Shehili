@@ -17,8 +17,8 @@
         <a href="#work" v-else>loja</a>
       </li>
       <li>
-        <a v-if="route.name != 'car-section'"
-          ><router-link to="/car-section">sobre</router-link></a
+        <a v-if="route.name != 'main'"
+          ><router-link to="/">sobre</router-link></a
         >
         <a href="#car" v-else>contato</a>
       </li>
