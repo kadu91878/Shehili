@@ -46,6 +46,9 @@
                 <label for="60+">60+R$</label>
               </div>
             </div>
+            <div class="clear">
+              <button>Limpar</button>
+            </div>
         </div>
       </div>
     </div>

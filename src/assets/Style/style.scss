@@ -865,6 +865,7 @@ html {
                 cursor: pointer;
                 color: $clr-primary;
                 background-color: $clr-background;
+                transition: all 300ms ease;
 
                 svg{
                     color: $clr-primary;
@@ -884,7 +885,7 @@ html {
             width: 0px;
             height: 0px;
             overflow: hidden;
-            // background-color: $clr-primary;
+            background-color:  rgb(240, 238, 215);
            
 
             &.show{
@@ -901,6 +902,30 @@ html {
                flex-direction: column;
                gap: 10px;
                padding: 10px 0 3px 0;
+               
+               .clear{
+                padding-bottom: 10px;
+                button{
+                    height: 30px;
+                    width: 100px;
+                    border: solid;
+                    color: $clr-background;
+                    text-transform: capitalize;
+                    font-size: 18px;
+                    
+                }
+
+                &:hover{
+                    button{
+                cursor: pointer;
+                color: $clr-primary;
+                background-color: $clr-background;
+                transition: all 300ms ease;
+                    }
+                }
+
+               
+                }
                
 
                p{
