@@ -504,7 +504,7 @@ html {
                     opacity: 0;
                     transition: all 300ms ease;
                     .arrow-left {
-                        transform: translate(12rem, 2ex);
+                        transform: translate(38rem, 2ex);
 
                         button {
                             width: 50px;
@@ -516,7 +516,7 @@ html {
                     }
 
                     .arrow-right {
-                        transform: translate(134.5rem, -6ex);
+                        transform: translate(110.5rem, -6ex);
 
                         button {
                             width: 50px;
@@ -878,20 +878,68 @@ html {
         .filter-box{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content:center;
+            flex-direction: column;
             gap: 10px;
             width: 0px;
             height: 0px;
             overflow: hidden;
-            border: solid;
+            // background-color: $clr-primary;
+           
 
             &.show{
-                width: 100%;
+                width: 300px;
                 height: 100%;
+                box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
     
             }
 
             .filter-options{
+               display: flex;
+            //    align-items: center;
+               justify-content: center;
+               flex-direction: column;
+               gap: 10px;
+               padding: 10px 0 3px 0;
+               
+
+               p{
+                   font-size: 18px;
+                   font-weight: 700;
+                   text-transform: capitalize;
+                   color: $clr-background;
+
+                   &::after{
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    width: 30px;
+                    margin-top: 5px;
+                    background-color: $clr-dark;
+                   }
+
+               }
+
+               .category-content{
+                   display: flex;
+                //    align-items: center;
+                //    justify-content: center;
+                   flex-direction: column;
+                   gap: 10px;
+                   padding-top: 10px;
+                   padding-bottom: 5px;
+
+                   .categoria{
+                    font-size: 14px;
+                    // color: $clr-backgroud-variant;
+
+                    &::before{
+                        content: " ";
+                        gap: 10px;
+                    }
+                   }
+               }
+               
 
             }
 
